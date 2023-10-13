@@ -28,6 +28,19 @@ function Main() {
     setArray(sortedArray);
   };
 
+  const handleAdd = () => {
+    const newName = prompt("Enter new Name here..");
+    // console.log(newName);
+    const updatedArray = [
+      ...Array,
+      {
+        id: Array.length + 1,
+        name: newName
+      }
+    ];
+    setArray(updatedArray);
+  };
+
   return (
     <div className="container">
       <input
@@ -39,6 +52,9 @@ function Main() {
       />
       <button className="button" onClick={handleSearch}>
         Search
+      </button>
+      <button className="button green" onClick={handleAdd}>
+        Add
       </button>
       <ul className="list">
         {Array.map((data) => (
